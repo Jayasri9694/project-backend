@@ -4,10 +4,8 @@ const connectDB = require('./config/db');
 const cors = require('cors');
 const petRoutes = require('./routes/petRoutes');
 const authRoutes = require('./routes/authRoutes');
-
 dotenv.config();
 connectDB();
-const bcrypt = require('bcrypt');
 const app = express();
 app.use(cors({
     origin: 'http://localhost:5173',

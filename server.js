@@ -1,17 +1,16 @@
 const express = require('express');
-const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const petRoutes = require('./routes/petRoutes');
 const authRoutes = require('./routes/authRoutes');
-dotenv.config();
+require('dotenv').config();
 connectDB();
 const app = express();
 app.use(cors({
     origin: 'http://localhost:5173',
 }));
 app.use(express.json());
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   res.send('Hello World!');
 });
 // Routes

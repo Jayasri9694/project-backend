@@ -4,6 +4,7 @@ const cors = require('cors');
 const petRoutes = require('./routes/petRoutes');
 const authRoutes = require('./routes/authRoutes');
 require('dotenv').config();
+
 connectDB();
 const app = express();
 app.use(cors({

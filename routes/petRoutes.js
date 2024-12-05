@@ -25,4 +25,17 @@ router.get('/pets/:id', async (req, res) => {
   }
 });
 
+
+// POST: Add a new pet
+router.post('/pets', async (req, res) => {
+  const { name, age, breed, temperament, specialNeeds } = req.body;
+  try {
+    const newPet = new Pet({ name, age, breed, temperament, specialNeeds });
+    await newPet.save();
+    res.status(201).json({ message: 'Pet added successfully', pet: newPet });
+  } catch (error) {
+    res.status(500).json({ message: 'Error adding pet', error: error.message });
+  }
+});
+
 module.exports = router;

@@ -4,14 +4,17 @@ const cors = require('cors');
 const petRoutes = require('./routes/petRoutes');
 const authRoutes = require('./routes/authRoutes');
 require('dotenv').config();
-
+const bodyParser = require('body-parser');
+  
 connectDB();
 const app = express();
+// Middleware
+app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'http://localhost:3000',
 }));
 app.use(express.json());
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   res.send('Hello World!');
 });
 // Routes

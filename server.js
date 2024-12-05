@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://cheerful-truffle-db6df6.netlify.app/',
 }));
 app.use(express.json());
 app.get('/', (_req, res) => {

@@ -14,10 +14,10 @@ app.use(cors({
     origin: 'https://localhost:3000',
 }));
 app.use(express.json());
+// Routes
 app.get('/', (_req, res) => {
   res.send('Hello World!');
 });
-
 
 
 // Routes

@@ -11,14 +11,18 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://localhost:3000',
 }));
 app.use(express.json());
 app.get('/', (_req, res) => {
   res.send('Hello World!');
 });
+
+
+
 // Routes
-app.use('/api', authRoutes);
+app.post('/register', authRoutes);
+app.post('/login', authRoutes);
 app.use('/api', petRoutes);
 app.use('/api/auth', require('./routes/authRoutes'));
 

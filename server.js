@@ -11,7 +11,9 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'https://localhost:3000',
+    origin: 'http://localhost:3000',
+    methods: 'GET,POST',
+    credentials: true, // Allow cookies if needed
 }));
 app.use(express.json());
 // Routes

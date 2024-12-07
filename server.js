@@ -11,9 +11,9 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: 'GET,POST',
-    credentials: true, // Allow cookies if needed
+    origin: ['http://localhost:3000', 'https://dashing-tiramisu-2f5954.netlify.app'],
+    methods: ['GET', 'POST'],
+    credentials: true // Allow cookies if needed
 }));
 app.use(express.json());
 // Routes

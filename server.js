@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://wonderful-lokum-144456.netlify.app/'],
+    origin: ['http://localhost:3000', 'https://dashing-tiramisu-2f5954.netlify.app'],
     methods: ['GET', 'POST'],
     credentials: true // Allow cookies if needed
 }));
